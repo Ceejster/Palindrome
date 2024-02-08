@@ -1,3 +1,4 @@
+const regex = /[^A-Za-z0-9 ]/g;
 //get string from page
 //controller function
 function getValue() {
@@ -12,7 +13,7 @@ function getValue() {
 //reverse the string
 //logic function
 function palindrome(userString) {
-    let trimString = userString.split(" ").join("");
+    let trimString = userString.toLowerCase().replace(regex, "").split(" ").join("");
     let reverse = "";
     let revString = "";
     let palindrome = false;
